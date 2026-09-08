@@ -5,6 +5,9 @@ import { defineConfig } from 'vite'
 const monacoEsm = fileURLToPath(new URL('./node_modules/monaco-editor/esm/vs/', import.meta.url))
 
 export default defineConfig({
+  // Served from https://sammkkit.github.io/jsonLens/, so assets — including the
+  // Monaco and analyzer worker chunks — resolve under that subpath.
+  base: '/jsonLens/',
   plugins: [react()],
   resolve: {
     alias: [
